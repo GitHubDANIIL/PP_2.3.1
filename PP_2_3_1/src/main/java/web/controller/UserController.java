@@ -24,11 +24,11 @@ public class UserController {
         return "/userList";
     }
 
-//    @GetMapping("/{id}")
-//    public String getUserById(@PathVariable("id") int id, ModelMap modelMap) {
-//        modelMap.addAttribute("userId", userService.getUserById(id));
-//        return "/userList";
-//    }
+    @GetMapping("/{id}")
+    public String getUserById(@PathVariable("id") int id, ModelMap modelMap) {
+        modelMap.addAttribute("users", userService.getUserById(id));
+        return "/userList";
+    }
 
     @GetMapping("/new")
 public String getAddUser(@ModelAttribute("user") User user) {
