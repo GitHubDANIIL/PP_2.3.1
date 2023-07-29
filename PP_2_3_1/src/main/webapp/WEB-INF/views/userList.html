@@ -19,7 +19,10 @@
             <td th:utext="${user.surname}">  </td>
             <td th:utext="${user.age}">  </td>
             <td><a th:href="@{/{id}/update(id=${user.getId()})}">update</a></td>
-            <td><a th:href="@{/delete/{id}(id=${user.getId()})}">delete</a></td>
+            <td><form th:method="DELETE" th:action="@{/delete/{id}(id=${user.getId()})}">
+                    <input type="submit" value="delete"/>
+                </form>
+            </td>
         </tr>
     </table>
     <br/>
