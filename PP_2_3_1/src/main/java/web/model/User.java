@@ -4,10 +4,7 @@ package web.model;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
@@ -30,6 +27,7 @@ public class User {
     private String surname;
 
     @Column
+    @NotNull
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
 
